@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-04T19:48:04.930Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="Qy79YAw5ViyioXPdhUIP" version="22.0.2" type="device">
+<mxfile host="app.diagrams.net" modified="2023-10-04T19:54:59.846Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="QwjBwslH3vIVhdlBNvDe" version="22.0.2" type="device">
   <diagram name="Page-1" id="FQmjvErU8okejdmYz6er">
     <mxGraphModel dx="1050" dy="566" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -75,6 +75,15 @@
         </mxCell>
         <mxCell id="KxjbceCW6tKYcpUBKD2l-25" value="soon" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="500" y="40" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="KxjbceCW6tKYcpUBKD2l-27" value="Authorized Links: none" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KxjbceCW6tKYcpUBKD2l-28" value="Visibility: public" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KxjbceCW6tKYcpUBKD2l-29" value="Storage site: IC data service" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="600" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
