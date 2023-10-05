@@ -48,7 +48,11 @@ Efficiency: Save time and effort by managing DN without the need for complex cro
 - **wallet currently integrated: metamask**
 - **current DNs interaction: EVMs/arbitrium**
 
+  for a given DN, WW is able to check proof of ownership of the same (ETH only, soon to be expanded), current address (no yet attached to DN picked as 'mother DN',soon to come) & chain-address. 
 
 ### future developments
 - **integration of multiple wallets** 
 - **integration of non EVM DNs**
+
+  for a given DN, WW will able to check proof of ownership for EVM & not EVM DNs, current address & attached ones (WW will allow you to bond DNs to a selected, 'mother' one). 
+<br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use). 
