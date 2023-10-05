@@ -54,5 +54,5 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 - **integration of multiple wallets** 
 - **integration of non EVM DNs**
 
-  for a given DN, WW will able to check proof of ownership for EVM & not EVM DNs, current address & attached ones (WW will allow you to bond DNs to a selected, 'mother' one). 
+  for a given DN, WW will able to check proof of ownership for EVM & not EVM DNs, current address & attached ones (WW will allow you to bond DNs to a selected, 'main' one). 
 <br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use). 
