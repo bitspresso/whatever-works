@@ -13,7 +13,7 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 ### Benefits
 
 - **User-Friendly:** WW offers an intuitive user interface, making it accessible for both crypto enthusiasts and beginners.
-Efficiency: Save time and effort by managing DN without the need for complex cross-chain transactions or transfers.
+- **Efficiency:** Save time and effort by managing DN without the need for complex cross-chain transactions or transfers.
 - **Enhanced DeFi:** DeFi applications can easily reference DN across blockchains, providing a more user-friendly experience and reducing errors.
 - **Community-Driven:** Join a thriving community of users and developers, shaping the future of DN management and cross-chain compatibility.
 
