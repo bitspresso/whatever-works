@@ -1,4 +1,4 @@
-# wathever works 
+# whatever works 
 ***built on bitfinity evm, deployed on ICP***
 
 Whatever Works (WW) is a groundbreaking dapp that simplifies the management of decentralized namespaces (DN) across different blockchain networks. It bridges the gap between various blockchains and the ICP blockchain, offering users a unified platform to store, access, and manage their DN, regardless of the blockchain they originate from.
