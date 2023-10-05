@@ -1,7 +1,7 @@
 # wathever works 
 ***built on bitfinity evm, deployed on ICP***
 
-Whatever Works (WW) is a groundbreaking integration that simplifies the management of decentralized namespaces (DN) across different blockchain networks. It bridges the gap between various blockchains and the ICP blockchain, offering users a unified platform to store, access, and manage their DN, regardless of the blockchain they originate from.
+Whatever Works (WW) is a groundbreaking dapp that simplifies the management of decentralized namespaces (DN) across different blockchain networks. It bridges the gap between various blockchains and the ICP blockchain, offering users a unified platform to store, access, and manage their DN, regardless of the blockchain they originate from.
 
 ### Reasons to use whatever works
 
@@ -48,7 +48,7 @@ Efficiency: Save time and effort by managing DN without the need for complex cro
 - **wallet currently integrated: metamask**
 - **current DNs interaction: EVMs/arbitrium**
 
-  for a given DN, WW is able to check proof of ownership of the same (ETH only, soon to be expanded), current address (no yet attached to DN picked as 'mother DN',soon to come) & chain-address. 
+  for a given DN, WW is able to check proof of ownership of the same (ETH only, soon to be expanded), current address (no yet attached to DN picked as 'main DN',soon to come).
 
 ### future developments
 - **integration of multiple wallets** 
