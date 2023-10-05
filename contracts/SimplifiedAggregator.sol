@@ -2,7 +2,13 @@ pragma solidity ^0.8.19;
 
 contract NReg {
     mapping(string => address) links;
-    /// @dev mapping(address => string) owner
+    mapping(address => string) relations;
+    mapping(string => bool) claimed;
+
+    modifier unique(string calldata name) {
+        require(!claimed(name));
+        _;
+    }
 
     function find(string calldata name) external view returns (bool, address) {
         address account = links[name];
@@ -11,7 +17,16 @@ contract NReg {
     }
 
     function register(string calldata name, address account) external {
+        _register(name, account, msg.sender);
+    }
+
+    function registerFor(string calldata name, address account, address owner) external {
+        _register(name, account, owner);
+    }
+
+    function _register(string calldata name, address account, address owner) private unique(name) {
         links[name] = account;
+        relations[owner] = name;
     }
 
     /// @dev add register_with()
@@ -37,24 +52,18 @@ contract Resolver {
     }
 }
 
-library AccountCreator {
-    function basis() external returns (address) {
-
-    }
-
-    function propagate() external returns (address) {
-
-    }
-}
-
 contract Account {
-    function root() public view returns (address) {
+    function target() public view returns (address) {
 
     }
 }
 
 contract Decorator {
-    constructor(address _register, address _queue) {
+    address immutable register;
+    address immutable queue;
+    address immutable lockChecker;
+
+    constructor(address _register, address _queue, address _lockChecker) {
 
     }
 
@@ -68,23 +77,22 @@ contract Decorator {
     }
 
     function withLifetime(string calldata name) external allowed(name) emptyOrOutlived(name) {
-        Account account = AccountCreator.basis(); /// @dev inject executor to pick up the propagation
+        Account account = new Account(); /// @dev inject executor to pick up the propagation
 
         NReg.register(name, address(account));
     }
 
-    function withPropagation(string calldata name, address root) external allowed(name) {
-        Account account = AccountCreator.propagate();
-        address target = account.root();
+    function withPropagation(string calldata name, address target) external allowed(name) {
+        Account account = new Account();
 
         NReg.register(name, target);
     }
 
-    function withPropagationDelayed(string calldata name, address root, address[] assets, uint128 timestamp) external allowed(name) {
-        /// @dev ...
+    function withPropagationDelayed(string calldata name, address target, address[] assets, uint128 timestamp) external allowed(name) {
+        Account account = new Account(); /// @dev inject, please
 
-        lockChecker.lock(account);
-        queue.push(name, root, assets, timestamp); /// @dev lock checks
+        LockChecker(lockChecker).lock(account);
+        Queue(queue).push(address(account), target, assets, timestamp); /// @dev lock checks
     }
 }
 
@@ -109,6 +117,18 @@ contract LockChecker {
 contract Executor {}
 
 contract Queue {
+    address immutable register;
+    address immutable executor_;
+    address immutable scheduler_;
+    address immutable lockChecker;
+
+    constructor(address _register, address _executor, address _scheduler, address _lockChecker) {
+        register = _register;
+        executor = _executor;
+        scheduler = _scheduler;
+        lockChecker = _lockChecker;
+    }
+
     struct QueueRecord {
         string lifetime;
     }
@@ -121,7 +141,7 @@ contract Queue {
         _;
     }
 
-    function push(string calldata name, address target, address[] assets, uint128 timestamp) external scheduler {
+    function push(address account, address target, address[] assets, uint128 timestamp) external scheduler {
 
     }
 
