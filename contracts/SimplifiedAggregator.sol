@@ -54,6 +54,10 @@ contract Account {
 }
 
 contract Decorator {
+    constructor(address _register, address _queue) {
+
+    }
+
     modifier allowed(string calldata name) {
         require(msg.sender == NReg.registrer(name));
         _;
@@ -79,7 +83,26 @@ contract Decorator {
     function withPropagationDelayed(string calldata name, address root, address[] assets, uint128 timestamp) external allowed(name) {
         /// @dev ...
 
+        lockChecker.lock(account);
         queue.push(name, root, assets, timestamp); /// @dev lock checks
+    }
+}
+
+contract LockChecker {
+    modifier authorized {
+        _;
+    }
+
+    function lock(address account) external authorized {
+
+    }
+
+    function unlock(address account) external authorized {
+
+    }
+
+    function rescue() public {
+        /// @dev only owner
     }
 }
 
@@ -105,6 +128,8 @@ contract Queue {
     function propagate(bytes calldata record) external executor {
         /// @dev deserialize record
 
+        (string name, address target, address[] assets, uint128 timestamp) = abi.decode(record, (string, address, address[], uint128));
+
         require(block.timestamp >= timestamp);
 
         uint256 length = assets.length;
@@ -120,5 +145,7 @@ contract Queue {
                 ++i;
             }
         }
+
+        lockChecker.unlock(account);
     }
 }
