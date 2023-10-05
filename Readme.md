@@ -41,6 +41,14 @@ Efficiency: Save time and effort by managing DN without the need for complex cro
 <br>:space_invader:***Problem:*** Existing solutions may require users to trust centralized intermediaries to manage their DNs.
 <br>:crystal_ball:***Solution:*** WW provides a decentralized solution built on the ICP blockchain, eliminating the need for intermediaries and putting users in control of their DNs assets.
 
-By addressing these problems, WW aims to provide a user-friendly, efficient, and secure solution for managing DNs across multiple blockchains, ultimately enhancing the user experience and expanding the possibilities of cross-chain interactions in the blockchain space.
+***By addressing these problems, WW aims to provide a user-friendly, efficient, and secure solution for managing DNs across multiple blockchains, ultimately enhancing the user experience and expanding the possibilities of cross-chain interactions in the blockchain space.***
+
+### current state
+- **currently built on bitfinity evm, deployed on ICP** 
+- **wallet currently integrated: metamask**
+- **current DNs interaction: EVMs/arbitrium**
 
 
+### future developments
+- **integration of multiple wallets** 
+- **integration of non EVM DNs**
