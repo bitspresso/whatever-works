@@ -20,26 +20,26 @@ Efficiency: Save time and effort by managing DN without the need for complex cro
 ### Some of the problems WW is solving 
 
 - **Fragmented ENS Management:**
-<br>***Problem:*** Users often hold DNs on multiple blockchains, leading to fragmented management and confusion.
-<br>***Solution:*** WW consolidates DN management, providing a single platform to store and manage names from various blockchains.
+<br>:space_invader:***Problem:*** Users often hold DNs on multiple blockchains, leading to fragmented management and confusion.
+<br>:crystal_ball:***Solution:*** WW consolidates DN management, providing a single platform to store and manage names from various blockchains.
 - **Complex Cross-Chain Transactions:**
-<br>***Problem:*** Transferring DN between blockchains can be technically challenging and time-consuming.
-<br>***Solution:*** WW eliminates the need for complex cross-chain transactions by enabling users to reference DN directly on the ICP blockchain, simplifying the process.
+<br>:space_invader:***Problem:*** Transferring DN between blockchains can be technically challenging and time-consuming.
+<br>:crystal_ball:***Solution:*** WW eliminates the need for complex cross-chain transactions by enabling users to reference DN directly on the ICP blockchain, simplifying the process.
 - **Security Concerns:**
-<br>***Problem:*** Storing DN on multiple blockchains can expose them to different security risks and vulnerabilities.
-<br>***Solution:*** WW leverages the security features of the ICP blockchain to ensure the safe storage and protection of DNs.
+<br>:space_invader:***Problem:*** Storing DN on multiple blockchains can expose them to different security risks and vulnerabilities.
+<br>:crystal_ball:***Solution:*** WW leverages the security features of the ICP blockchain to ensure the safe storage and protection of DNs.
 - **Lack of Interoperability:**
-<br>***Problem:*** Different blockchains often operate in isolation, hindering interoperability and cross-chain functionality.
-<br>***Solution:*** WW enhances interoperability by bridging DN from Ethereum and other compatible blockchains, fostering a more interconnected blockchain ecosystem.
+<br>:space_invader:***Problem:*** Different blockchains often operate in isolation, hindering interoperability and cross-chain functionality.
+<br>:crystal_ball:***Solution:*** WW enhances interoperability by bridging DN from Ethereum and other compatible blockchains, fostering a more interconnected blockchain ecosystem.
 - **Inefficiency in DeFi Applications:**
-<br>***Problem:*** DeFi applications may struggle to access DN across blockchains, resulting in suboptimal user experiences.
-<br>***Solution:*** WW enables DeFi apps to easily reference DNs, improving user interaction and reducing errors within decentralized financial platforms.
+<br>:space_invader:***Problem:*** DeFi applications may struggle to access DN across blockchains, resulting in suboptimal user experiences.
+<br>:crystal_ball:***Solution:*** WW enables DeFi apps to easily reference DNs, improving user interaction and reducing errors within decentralized financial platforms.
 - **User Confusion:**
-<br>***Problem:*** Users may find it challenging to keep track of their DN assets and their respective blockchains.
-<br>***Solution:*** WW simplifies DN asset management, enhancing user clarity and reducing the risk of losing valuable digital assets.
+<br>:space_invader:***Problem:*** Users may find it challenging to keep track of their DN assets and their respective blockchains.
+<br>:crystal_ball:***Solution:*** WW simplifies DN asset management, enhancing user clarity and reducing the risk of losing valuable digital assets.
 - **Lack of Centralized Solutions:**
-<br>***Problem:*** Existing solutions may require users to trust centralized intermediaries to manage their DNs.
-<br>***Solution:*** WW provides a decentralized solution built on the ICP blockchain, eliminating the need for intermediaries and putting users in control of their DNs assets.
+<br>:space_invader:***Problem:*** Existing solutions may require users to trust centralized intermediaries to manage their DNs.
+<br>:crystal_ball:***Solution:*** WW provides a decentralized solution built on the ICP blockchain, eliminating the need for intermediaries and putting users in control of their DNs assets.
 
 By addressing these problems, WW aims to provide a user-friendly, efficient, and secure solution for managing DNs across multiple blockchains, ultimately enhancing the user experience and expanding the possibilities of cross-chain interactions in the blockchain space.
 
