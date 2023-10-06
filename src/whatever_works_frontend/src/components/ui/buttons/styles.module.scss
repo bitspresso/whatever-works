@@ -1,6 +1,7 @@
 .connectWallet {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 0 10px;
   position: absolute;
   top: min(20px, 2vh);
@@ -10,4 +11,13 @@
   padding: min(8px, 1vh) min(32px, 3vw);
   color: #fff;
   font-family: Manrope;
+  button {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
