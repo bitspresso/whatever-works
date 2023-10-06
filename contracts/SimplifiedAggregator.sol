@@ -162,38 +162,16 @@ contract ERC20 {
     }
 }
 
-contract Executor {}
-
-contract Queue {
+contract Executor {
     address immutable register_;
-    address immutable executor_;
-    address immutable scheduler_;
     address immutable lockChecker_;
 
-    constructor(address _register, address _executor, address _scheduler, address _lockChecker) {
-        register_ = _register;
-        executor_ = _executor;
-        scheduler_ = _scheduler;
-        lockChecker_ = _lockChecker;
+    constructor(address register, address lockChecker) {
+        register_ = register;
+        lockChecker_ = lockChecker;
     }
 
-    struct QueueRecord {
-        string lifetime;
-    }
-
-    modifier executor {
-        _;
-    }
-
-    modifier scheduler {
-        _;
-    }
-
-    function push(address account, address target, address[] calldata assets, uint128 timestamp) external scheduler {
-
-    }
-
-    function propagate(bytes calldata record) external executor {
+    function propagate(bytes calldata record) external {
         /// @dev deserialize record
 
         (string memory name, address target, address[] memory assets, uint128 timestamp) = abi.decode(record, (string, address, address[], uint128));
@@ -215,5 +193,43 @@ contract Queue {
         }
 
         LockChecker(lockChecker_).unlock(account);
+    }
+}
+
+contract Queue {
+    address immutable register_;
+    address immutable executor_;
+    address immutable scheduler_;
+
+    mapping(address => QueueRecord) pending;
+
+    constructor(address _register, address _executor, address _scheduler) {
+        register_ = _register;
+        executor_ = _executor;
+        scheduler_ = _scheduler;
+    }
+
+    struct QueueRecord {
+        address target;
+        address[] assets;
+        uint128 timestamp;
+    }
+
+    modifier executor {
+        require(msg.sender == executor_);
+        _;
+    }
+
+    modifier scheduler {
+        require(msg.sender == scheduler_);
+        _;
+    }
+
+    function push(address account, address target, address[] calldata assets, uint128 timestamp) external scheduler {
+        pending[account] = QueueRecord(target, assets, timestamp);
+    }
+
+    function pick(address account) external executor {
+        delete pending[account];
     }
 }
