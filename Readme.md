@@ -65,5 +65,4 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 <br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use).
 
 ### Future Improvements 
-
-![Drag Racing](
+![Drag Racing](futureimpr.png)
