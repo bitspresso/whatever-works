@@ -20,23 +20,3 @@
     }
   }
 }
-
-@media only screen and (max-width: 768px) {
-  .homepage {
-    .firstSection {
-      .text {
-        h1 {
-        }
-      }
-      .icons {
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        img {
-        }
-        img:hover {
-        }
-      }
-    }
-  }
-}

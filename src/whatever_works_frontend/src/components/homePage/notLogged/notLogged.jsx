@@ -15,20 +15,20 @@ export default function NotLoggedHomePage() {
         <h2>We connect, you control</h2>
       </div>
       <div className={styles.icons}>
-        <Link to="">
+        <Link to="https://internetcomputer.org/" target="_blank">
           <img src={icLogo} alt="Internet Computer" />
         </Link>
-        <Link to="">
+        <Link to="https://ethereum.org/" target="_blank">
           <img src={ethLogo} alt="Ethereum" />
         </Link>
-        <Link to="">
+        <Link to="https://polygon.technology/" target="_blank">
           <img src={polyLogo} alt="Polygon" />
         </Link>
-        <Link to="">
+        <Link to="https://www.optimism.io/" target="_blank">
           <img src={opLogo} alt="Optimism" />
         </Link>
-        <Link to="">
-          <img src={arbLogo} alt="Arbitrum" />
+        <Link to="https://arbitrum.io/">
+          <img src={arbLogo} alt="Arbitrum" target="_blank" />
         </Link>
       </div>
     </div>

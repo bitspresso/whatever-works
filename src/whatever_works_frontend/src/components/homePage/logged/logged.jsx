@@ -14,11 +14,13 @@ function SmallWallet({ address, balance, blockchain, ens }) {
 
 export default function Logged({ account }) {
   return (
-    <div>
-      <h2>Welcome back, {account}</h2>
+    <div className={styles.walletsHolder}>
+      <h2>
+        Welcome back,
+        <br /> {account}
+      </h2>
       <div>
         {mockWallets.map((el, i) => {
-          console.log(el);
           return (
             <SmallWallet
               key={`wallet_${i}`}

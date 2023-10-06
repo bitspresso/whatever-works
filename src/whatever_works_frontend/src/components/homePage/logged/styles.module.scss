@@ -1,5 +1,16 @@
-.wallet {
+.walletsHolder {
+  padding: min(5vh, 50px) min(5vw, 50px);
+  font-family: Manrope;
   display: flex;
-  gap: min(2vw, 20px);
-  align-items: center;
+  flex-direction: column;
+  gap: min(25px, 2vh);
+  text-align: center;
+  .wallet {
+    display: flex;
+    gap: min(2vw, 20px);
+    align-items: center;
+    img {
+      width: min(50px, 10vw);
+    }
+  }
 }

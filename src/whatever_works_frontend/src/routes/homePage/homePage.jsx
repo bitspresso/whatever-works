@@ -20,14 +20,17 @@ export default function HomePage() {
         <NotLogged />
       )}
       <div className={styles.socials}>
-        <Link to="">
-          <img src={githubLogo} alt="Arbitrum" />
+        <Link
+          to="https://github.com/bitspresso/whatever-works/"
+          target="_blank"
+        >
+          <img src={githubLogo} alt="GitHub" />
         </Link>
-        <Link to="">
-          <img src={telegramLogo} alt="Arbitrum" />
+        <Link to="mailto:chillandhack@gmail.com?subject=Hey%20There!">
+          <img src={telegramLogo} alt="MailUs" target="_blank" />
         </Link>
-        <Link to="">
-          <img src={twitterLogo} alt="Arbitrum" />
+        <Link to="https://twitter.com/E2TE2T120664">
+          <img src={twitterLogo} alt="Twitter" target="_blank" />
         </Link>
       </div>
     </div>
