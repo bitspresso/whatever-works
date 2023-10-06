@@ -62,4 +62,8 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 - ***your idea!***
 
   for a given DN, WW will able to check proof of ownership for EVM & not EVM DNs, current address & attached ones (WW will allow you to bond DNs to a selected, 'main' one). 
-<br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use). 
+<br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use).
+
+### Future Improvements 
+
+![Drag Racing](
