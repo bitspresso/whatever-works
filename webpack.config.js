@@ -110,6 +110,7 @@ module.exports = {
       },
     },
     static: path.resolve(__dirname, "src", frontendDirectory, "assets"),
+    historyApiFallback: true,
     hot: true,
     watchFiles: [path.resolve(__dirname, "src", frontendDirectory)],
     liveReload: true,

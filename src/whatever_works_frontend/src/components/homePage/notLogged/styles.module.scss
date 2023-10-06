@@ -1,0 +1,37 @@
+.firstSection {
+  width: 80%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: min(5vh, 50px);
+  .text {
+    display: flex;
+    flex-direction: column;
+    gap: min(2.5vh, 25px);
+    color: #d2e5ed;
+    text-align: center;
+    font-weight: 400;
+    h1 {
+      text-transform: uppercase;
+    }
+  }
+  .icons {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: min(2vw, 20px);
+    img {
+      flex-shrink: 0;
+      width: min(75px, 8vmax);
+      height: max-content;
+      transition: transform var(--transition-medium) ease-in;
+    }
+    img:hover {
+      transform: scale(1.15);
+    }
+  }
+}
