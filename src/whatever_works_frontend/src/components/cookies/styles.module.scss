@@ -4,6 +4,7 @@
   bottom: 0;
   width: calc(100% - calc(min(22px, 2vw) * 2));
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   padding: min(16px, 2vh) min(22px, 2vw);
   color: white;
@@ -19,6 +20,8 @@
     gap: min(20px, 2vw);
     .allow,
     .deny {
+      flex-grow: 1;
+      width: max-content;
       padding: min(8px, 1vh) min(24px, 2vw);
       border-radius: 16px;
       border: 2px solid transparent;
