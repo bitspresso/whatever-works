@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { metamaskContext } from "../../../contexts/metamaskContext";
 import styles from "./styles.module.scss";
-import { Link } from "../../../../../../node_modules/react-router-dom/dist/index";
-
+import logout from "../../../../assets/images/logout.svg";
 export default function CreateMetamaskButton() {
   const { metamaskAccounts, setMetamaskAccounts } = useContext(metamaskContext);
   function connectWallet() {
@@ -17,6 +16,13 @@ export default function CreateMetamaskButton() {
   return metamaskAccounts.length > 0 ? (
     <div className={styles.connectWallet}>
       <p>{metamaskAccounts[0]}</p>
+      <button
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        <img src={logout} alt="Logout" />
+      </button>
     </div>
   ) : (
     <button className={styles.connectWallet} onClick={connectWallet}>

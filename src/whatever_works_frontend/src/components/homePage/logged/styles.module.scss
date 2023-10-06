@@ -5,12 +5,17 @@
   flex-direction: column;
   gap: min(25px, 2vh);
   text-align: center;
-  .wallet {
+  .wallets {
     display: flex;
-    gap: min(2vw, 20px);
-    align-items: center;
-    img {
-      width: min(50px, 10vw);
+    flex-direction: column;
+    gap: 10px;
+    .wallet {
+      display: flex;
+      gap: min(2vw, 20px);
+      align-items: center;
+      img {
+        width: min(50px, 10vw);
+      }
     }
   }
 }

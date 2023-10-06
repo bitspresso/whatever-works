@@ -1,4 +1,7 @@
 .connectWallet {
+  display: flex;
+  flex-direction: row;
+  gap: 0 10px;
   position: absolute;
   top: min(20px, 2vh);
   right: min(20px, 2vh);
