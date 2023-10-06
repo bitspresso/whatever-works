@@ -54,6 +54,14 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 
   for a given DN, WW is able to check proof of ownership of the same (ETH only, soon to be expanded), current address (no yet attached to DN picked as 'main DN',soon to come).
 
+### Bitfinity deployment 
+Queue: 0xdca3d9f872decd6177b2e266413bb0acdd29725d4951a1790a74f00921e1fd72
+<br> Executor: 0xa199dd99c0c9449bd9d448aa8b3af81ac9bbf8db93f912375580721d6f8cf4cf 
+
+### Arbitrium deployment 
+Queue: 0x7a57D5d5abe4b528945Ef9df809c3d2b0347C9be
+<br> Executor: 0x02f39e83656c3d7ae3f02721c6aa90e01d861c09
+
 ### Future developments
 - **wallet-agnostic approach** 
 - **interoperability with non-EVM-based DNs**
