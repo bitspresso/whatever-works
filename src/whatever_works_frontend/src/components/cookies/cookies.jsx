@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { useState } from "react";
+import { Link } from "../../../../../node_modules/react-router-dom/dist/index";
 
 export default function Cookies() {
   const rawCookies = localStorage.getItem("cookies");
@@ -23,12 +24,14 @@ export default function Cookies() {
           opacity: cookies ? "0" : "1",
         }}
       >
-        <small>
-          Privacy setting — This site uses third-party website traking
-          technologies to provide and continially improve our services. I agree
-          and may revoke or change my consent at any time with effect for the
-          future. See also our Privacy Policy and Cookies
-        </small>
+        <a href="/privacy">
+          <small>
+            Privacy setting — This site uses third-party website traking
+            technologies to provide and continially improve our services. I
+            agree and may revoke or change my consent at any time with effect
+            for the future. See also our Privacy Policy and Cookies
+          </small>
+        </a>
         <div className={styles.buttons}>
           <button
             onClick={() => {

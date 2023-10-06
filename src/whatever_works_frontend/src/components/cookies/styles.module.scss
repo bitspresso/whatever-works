@@ -1,5 +1,5 @@
 .cookies {
-  position: absolute;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: calc(100% - calc(min(22px, 2vw) * 2));
@@ -13,6 +13,10 @@
   background-color: black;
   opacity: 1;
   transition: opacity var(--transition-slower) ease-in;
+  a {
+    color: white;
+    text-decoration: none;
+  }
   .buttons {
     flex-grow: 1;
     display: flex;

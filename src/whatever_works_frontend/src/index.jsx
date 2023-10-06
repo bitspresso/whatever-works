@@ -2,6 +2,7 @@ import React from "react";
 import "../assets/main.css";
 import RootLayout from "./layouts/rootLayout/rootLayout";
 import HomePage from "./routes/homePage/homePage";
+import PrivacyPage from "./routes/privacyPage/privacyPage";
 import FallbackPage from "./routes/fallbackPage/fallbackPage";
 import {
   BrowserRouter,
@@ -18,6 +19,7 @@ createRoot(document.getElementById("app")).render(
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="*" element={<FallbackPage />} />
           </Routes>
         </BrowserRouter>
