@@ -13,6 +13,7 @@
   opacity: 1;
   transition: opacity var(--transition-slower) ease-in;
   .buttons {
+    flex-grow: 1;
     display: flex;
     align-items: center;
     gap: min(20px, 2vw);
@@ -37,5 +38,9 @@
     .deny:hover {
       border-color: #4a4a4a;
     }
+  }
+  small {
+    display: flex;
+    align-items: center;
   }
 }
