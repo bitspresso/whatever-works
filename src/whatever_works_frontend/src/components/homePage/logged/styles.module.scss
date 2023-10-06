@@ -14,9 +14,13 @@
       gap: min(2vw, 20px);
       align-items: center;
       color: white;
+      transition: transform var(--transition-medium) ease-in;
       img {
         width: min(50px, 10vw);
       }
+    }
+    .wallet:hover {
+      transform: scale(1.05);
     }
     .openWalletContainer {
       display: flex;
