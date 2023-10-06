@@ -43,16 +43,22 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 
 ***By addressing these problems, WW aims to provide a user-friendly, efficient, and secure solution for managing DNs across multiple blockchains, ultimately enhancing the user experience and expanding the possibilities of cross-chain interactions in the blockchain space.***
 
+### High-level Queue/Executor overview
+
 ### Current state
-- **currently built on bitfinity evm, deployed on ICP** 
-- **wallet currently integrated: metamask**
-- **current DNs interaction: EVMs/arbitrium**
+- **core smart contracts deployed on bitfinity evm, front-end available on ICP** 
+- **wallet integration: metamask**
+- **DNs interaction: EVMs/arbitrium**
+- **architecture available**
 
   for a given DN, WW is able to check proof of ownership of the same (ETH only, soon to be expanded), current address (no yet attached to DN picked as 'main DN',soon to come).
 
 ### Future developments
-- **integration of multiple wallets** 
-- **integration of non EVM DNs**
+- **wallet-agnostic approach** 
+- **interoperability with non-EVM-based DNs**
+- **custom behavior modules**
+- **asset compatibility adapters**
+- ***your idea!***
 
   for a given DN, WW will able to check proof of ownership for EVM & not EVM DNs, current address & attached ones (WW will allow you to bond DNs to a selected, 'main' one). 
 <br> will allow you to set behaviour & lifetime for you to set conditional executions. (drop & redirect, one-time round, multiple use). 
