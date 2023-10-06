@@ -44,6 +44,7 @@ Whatever Works (WW) is a groundbreaking dapp that simplifies the management of d
 ***By addressing these problems, WW aims to provide a user-friendly, efficient, and secure solution for managing DNs across multiple blockchains, ultimately enhancing the user experience and expanding the possibilities of cross-chain interactions in the blockchain space.***
 
 ### High-level Queue/Executor overview
+![Drag Racing](highlevelarchitecture.jpg)
 
 ### Current state
 - **core smart contracts deployed on bitfinity evm, front-end available on ICP** 
