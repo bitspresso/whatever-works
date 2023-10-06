@@ -61,6 +61,7 @@ Queue: 0xdca3d9f872decd6177b2e266413bb0acdd29725d4951a1790a74f00921e1fd72
 ### Arbitrium deployment 
 Queue: 0x7a57D5d5abe4b528945Ef9df809c3d2b0347C9be
 <br> Executor: 0x02f39e83656c3d7ae3f02721c6aa90e01d861c09
+<br> https://testnet.arbiscan.io/address/0x7a57d5d5abe4b528945ef9df809c3d2b0347c9be 
 
 ### Future developments
 - **wallet-agnostic approach** 
