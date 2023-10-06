@@ -3,9 +3,10 @@ import { metamaskContext } from "../../../contexts/metamaskContext";
 import styles from "./styles.module.scss";
 import logout from "../../../../assets/images/logout.svg";
 export default function CreateMetamaskButton() {
-  const { metamaskAccounts, setMetamaskAccounts } = useContext(metamaskContext);
+  const { metamaskAccounts, setMetamaskAccounts, hasMetamask } =
+    useContext(metamaskContext);
   function connectWallet() {
-    if (window.ethereum) {
+    if (hasMetamask) {
       window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then((result) => {
