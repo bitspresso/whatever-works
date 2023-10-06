@@ -1,0 +1,4 @@
+service : (nat64) -> {
+    "counter": () -> (nat64) query;
+    "fetch": (Principal) -> () update;
+}

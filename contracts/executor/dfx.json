@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "canisters": {
+    "executor_backend": {
+      "type": "rust",
+      "package": "executor_backend",
+      "candid": "src/executor_backend/executor_backend.did"
+    },
+    "executor_frontend": {
+      "type": "assets",
+      "source": [
+        "src/executor_frontend/assets"
+      ],
+      "dependencies": [
+        "executor_backend"
+      ]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "output_env_file": ".env"
+}
