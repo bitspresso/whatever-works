@@ -1,6 +1,7 @@
 export const mockWallets = [
   {
     blockchain: "ethereum",
+    type: "Main",
     address: "0x...",
     ens: "hello.world.eth",
     properties: {
@@ -9,6 +10,7 @@ export const mockWallets = [
   },
   {
     blockchain: "internetcomputer",
+    type: "Secondary",
     address: "0x...0",
     ens: "",
     properties: {
@@ -17,6 +19,7 @@ export const mockWallets = [
   },
   {
     blockchain: "optimism",
+    type: "Secondary",
     address: "0x..0.",
     ens: "",
     properties: {
