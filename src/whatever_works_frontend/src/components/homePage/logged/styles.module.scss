@@ -1,0 +1,54 @@
+.walletsHolder {
+  padding: min(5vh, 50px) min(5vw, 50px);
+  font-family: Manrope;
+  display: flex;
+  flex-direction: column;
+  gap: min(25px, 2vh);
+  text-align: center;
+  .wallets {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .wallet {
+      display: flex;
+      gap: min(2vw, 20px);
+      align-items: center;
+      color: white;
+      img {
+        width: min(50px, 10vw);
+      }
+    }
+    .openWalletContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      backdrop-filter: blur(3px);
+      .openWallet {
+        overflow: hidden;
+        position: relative;
+        padding: min(15vh, 100px) min(5vw, 50px) min(5vh, 50px) min(5vw, 50px);
+        background-color: black;
+        border-radius: 16px;
+        border: 2px solid white;
+        button {
+          color: white;
+          position: absolute;
+          top: min(2vh, 20px);
+          right: min(2vw, 20px);
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate3d(-50%, -15%, 0);
+          height: min(15vh, 100px);
+        }
+      }
+    }
+  }
+}

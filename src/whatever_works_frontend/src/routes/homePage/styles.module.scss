@@ -1,0 +1,22 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  .socials {
+    position: absolute;
+    bottom: min(20px, 2vh);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: min(2vw, 20px);
+    img {
+      width: 25px;
+      transition: transform var(--transition-medium) ease-in;
+    }
+    img:hover {
+      transform: scale(1.15);
+    }
+  }
+}

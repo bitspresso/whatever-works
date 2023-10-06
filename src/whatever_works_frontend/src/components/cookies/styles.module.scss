@@ -1,0 +1,41 @@
+.cookies {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: calc(100% - calc(min(22px, 2vw) * 2));
+  display: flex;
+  justify-content: space-between;
+  padding: min(16px, 2vh) min(22px, 2vw);
+  color: white;
+  border-top: 2px solid white;
+  font-family: Manrope;
+  background-color: black;
+  opacity: 1;
+  transition: opacity var(--transition-slower) ease-in;
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: min(20px, 2vw);
+    .allow,
+    .deny {
+      padding: min(8px, 1vh) min(24px, 2vw);
+      border-radius: 16px;
+      border: 2px solid transparent;
+      transition: border-color var(--transition-fast) ease-in;
+    }
+    .allow {
+      background: #4a4a4a;
+      color: white;
+    }
+    .allow:hover {
+      border-color: white;
+    }
+    .deny {
+      background-color: white;
+      color: black;
+    }
+    .deny:hover {
+      border-color: #4a4a4a;
+    }
+  }
+}

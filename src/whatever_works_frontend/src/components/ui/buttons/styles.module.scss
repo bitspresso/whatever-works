@@ -1,0 +1,13 @@
+.connectWallet {
+  display: flex;
+  flex-direction: row;
+  gap: 0 10px;
+  position: absolute;
+  top: min(20px, 2vh);
+  right: min(20px, 2vh);
+  border-radius: 16px;
+  background-color: #294dfa;
+  padding: min(8px, 1vh) min(32px, 3vw);
+  color: #fff;
+  font-family: Manrope;
+}
