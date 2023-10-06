@@ -3,10 +3,11 @@ pragma solidity ^0.8.19;
 contract NReg {
     mapping(string => address) links;
     mapping(address => string) relations;
+    mapping(string => address) reverse;
     mapping(string => bool) claimed;
 
     modifier unique(string calldata name) {
-        require(!claimed(name));
+        require(!claimed[name]);
         _;
     }
 
@@ -14,6 +15,10 @@ contract NReg {
         address account = links[name];
 
         return (account != address(0), account);
+    }
+
+    function owner(string calldata name) external view returns (address) {
+        return reverse[name];
     }
 
     function register(string calldata name, address account) external {
@@ -56,6 +61,10 @@ contract Account {
     function target() public view returns (address) {
 
     }
+
+    function approveFor(address authority, address target, address asset, uint256 amount) public {
+
+    }
 }
 
 contract Decorator {
@@ -64,11 +73,13 @@ contract Decorator {
     address immutable lockChecker;
 
     constructor(address _register, address _queue, address _lockChecker) {
-
+        register = _register;
+        queue = _queue;
+        lockChecker = _lockChecker;
     }
 
     modifier allowed(string calldata name) {
-        require(msg.sender == NReg.registrer(name));
+        require(msg.sender == NReg(register).owner(name));
         _;
     }
 
@@ -79,20 +90,39 @@ contract Decorator {
     function withLifetime(string calldata name) external allowed(name) emptyOrOutlived(name) {
         Account account = new Account(); /// @dev inject executor to pick up the propagation
 
-        NReg.register(name, address(account));
+        NReg(register).register(name, address(account));
     }
 
     function withPropagation(string calldata name, address target) external allowed(name) {
         Account account = new Account();
 
-        NReg.register(name, target);
+        NReg(register).register(name, target);
     }
 
-    function withPropagationDelayed(string calldata name, address target, address[] assets, uint128 timestamp) external allowed(name) {
+    function withPropagationDelayed(string calldata name, address target, address[] calldata assets, uint128 timestamp) external allowed(name) {
         Account account = new Account(); /// @dev inject, please
+        address accountAddress = address(account);
 
-        LockChecker(lockChecker).lock(account);
-        Queue(queue).push(address(account), target, assets, timestamp); /// @dev lock checks
+        LockChecker(lockChecker).lock(accountAddress);
+
+        _allowanceHelper(accountAddress, target, assets);
+
+        Queue(queue).push(accountAddress, target, assets, timestamp); /// @dev lock checks
+    }
+
+    function _allowanceHelper(address source, address target, address[] calldata assets) private {
+        uint256 length = assets.length;
+
+        for(uint i = 0; i < length;) {
+            address asset = assets[i];
+            uint256 amount = ERC20(asset).balanceOf(source);
+
+            Account(source).approveFor(queue, target, asset, amount);
+
+            unchecked {
+                ++i;
+            }
+        }
     }
 }
 
@@ -114,19 +144,37 @@ contract LockChecker {
     }
 }
 
+contract ERC20 {
+    function balanceOf(address account) public view returns (uint256) {
+
+    }
+
+    function approve(address target, uint256 amount) public {
+
+    }
+
+    function approveFrom(address from, address to, uint256 amount) public {
+
+    }
+
+    function transferFrom(address from, address to, uint256 amount) public {
+
+    }
+}
+
 contract Executor {}
 
 contract Queue {
-    address immutable register;
+    address immutable register_;
     address immutable executor_;
     address immutable scheduler_;
-    address immutable lockChecker;
+    address immutable lockChecker_;
 
     constructor(address _register, address _executor, address _scheduler, address _lockChecker) {
-        register = _register;
-        executor = _executor;
-        scheduler = _scheduler;
-        lockChecker = _lockChecker;
+        register_ = _register;
+        executor_ = _executor;
+        scheduler_ = _scheduler;
+        lockChecker_ = _lockChecker;
     }
 
     struct QueueRecord {
@@ -141,19 +189,19 @@ contract Queue {
         _;
     }
 
-    function push(address account, address target, address[] assets, uint128 timestamp) external scheduler {
+    function push(address account, address target, address[] calldata assets, uint128 timestamp) external scheduler {
 
     }
 
     function propagate(bytes calldata record) external executor {
         /// @dev deserialize record
 
-        (string name, address target, address[] assets, uint128 timestamp) = abi.decode(record, (string, address, address[], uint128));
+        (string memory name, address target, address[] memory assets, uint128 timestamp) = abi.decode(record, (string, address, address[], uint128));
 
         require(block.timestamp >= timestamp);
 
         uint256 length = assets.length;
-        address account = NReg.find(name);
+        (, address account) = NReg(register_).find(name);
 
         for(uint i = 0; i < length;) {
             address asset = assets[i];
@@ -166,6 +214,6 @@ contract Queue {
             }
         }
 
-        lockChecker.unlock(account);
+        LockChecker(lockChecker_).unlock(account);
     }
 }
